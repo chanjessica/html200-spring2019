@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css?family=Dekko|Merienda|Rock+Salt');
+body { 
+	margin: 0;
+	font-family: 'Dekko', cursive, serif;
+	background-color: #006B00;  /* light green */
+	}
+.sr-only {
+	position: absulute;
+	left: -1000px;
+	top: auto;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}
+a:link{ 
+	text-decoration: none;
+	color:#4B0082;  /* indigo */
+}
+a:hover {
+	color: #e24406; 
+	text-decoration:underline;
+}
+	/*--   TOP  --*/
+.header-flex{
+	height: 70px;
+	display:flex;
+	flex-direction: row;
+	background-color: #FFD700 /* gold */;
+}
+.header-flex div{
+	width: 500px;
+	position: absolute;
+	right: 20px;
+	background-color: inherit;
+	display:flex;
+	justify-content:flex-end;
+	align-items:center;
+}
+h1 { 
+	transition-property: font-size;
+	transition-duration: 4s;
+	transition-timing-function: ease-out;
+	/*transition-delay: 2s; */
+	font-family: 'Merienda', cursive, serif;
+	text-shadow: 4px 4px 4px #aaa;
+     text-align:center; 
+     color:  #4b0082 /* purple */  ; 
+     padding-top: 10px ;
+     width: 700px ; 
+     height: 45px;
+     margin: 0;
+     margin-left: 100px;
+}
+h1:hover {
+	color: yellow;
+	font-size: 3em;
+}
+.fa-home {
+	color: olive;
+}
+.fa-cat {
+    color: white;
+}
+.fa-html5{
+	color: darkorange;
+}
+.fa-github{
+	color: purple;
+}
+.fa-envelope {
+	color: red;
+}
+img { 
+      border: 4px;
+      color: orange ;
+      border-style: solid ;
+    /*  margin: 0px;  */
+}
+header img {
+         margin: 5px 5px 0 10px;
+         padding: 2px;
+         width: 40px;
+         height: 40px;
+         border-radius: 25px;
+}
+
+	/* CENTER */
+div h3 {
+	margin: 0;
+	color: purple; 
+	/*  border:1px solid #333; */
+	}
+dt {color:#000;} 
+dd { 
+	margin-left: 10px; 
+	margin-top:10px; 
+	/*	border:1px solid #333; */ 
+	}
+.flex-container {
+  display: flex;
+  flex-direction:row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background-color: inherit;
+	/*  border:1px solid #333; */
+}
+.flex-container > div {
+	transition: background 2s, font-size 5s;
+  background-color: inherit;
+  width: 30%;
+  margin: 5px;
+  padding: 10px;
+  line-height: 15px;
+	/* border:1px solid #333; */
+	border-radius: 15px;
+	}
+	
+	/*  hover do not work on div:not  ----
+.flex-container > div:nth-child(6n+4),div:nth-child(6n+5),div:nth-child(6n+6) { background:lightgrey;}
+.flex-container > div:not(:nth-child(6n+4)):not(:nth-child(6n+5)):not(:nth-child(6n+6)) { background-color:lightgreen;} 
+.flex-container > div:hover{ background-color:crimson; font-size:1.5rem;}
+*/
+  /* group of 3 */
+.flex-container > div:nth-child(-n+3){    background:#FFEFD5;  }
+.flex-container > div:nth-child(6n+4),div:nth-child(6n+5),div:nth-child(6n+6) { background:#DCDCDC;}  /* light grey */
+.flex-container > div:nth-child(6n+7),div:nth-child(6n+8),div:nth-child(6n+9) { background:#FFEFD5;}  /*light yellow*/
+.flex-container > div:hover{ background-color:gold; font-size:1.5rem;}
+
+/*  checker-box  --- works ---
+.flex-container > div:nth-child(1n){background-color:lightgreen;} 
+.flex-container > div:nth-child(2n){background-color:lightgrey;}
+.flex-container > div:hover{ background-color:white; font-size:1.5rem;}
+.flex-container > div:nth-child(odd):hover{background-color:#c4f2f1;} 
+.flex-container > div:nth-child(even):hover{background-color: #f49ef7;}
+*/
+footer nav {  
+	background-color: #FFE5EA;
+	text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+	} 
+footer a:hover { font-size:1.5rem; color:#C20000;}
+footer ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+footer ul li {
+	display: inline; 
+	padding: 2rem;
+	margin-left: 1rem;
+	/* background: white; */
+}
+
+
+
