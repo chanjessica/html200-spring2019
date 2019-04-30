@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Mars</title>
+	<!--link rel="stylesheet" type="text/css" href="styles/bank.css"-->
+	<script src="bank.js"></script>
+</head>
+
+<body onload="action()" onunload="reset()">
+	<h2>Welcome to Bank of Mars:</h2>
+
+	<form method="get" action="action_page.php">
+
+		<fieldset class="account"> 
+			<legend>Account Info:</legend>
+			<div>
+				Account #: <input type="text" name="acct-no"> 
+			</div>
+			<div>
+				Account Type: 
+				<input name="account-type" type="radio" value="saving" checked>Saving
+				<input name="account-type" type="radio" value="checking">Checking
+			</div>
+		</fieldset>	
+
+		<fieldset class="number">
+		 <legend>Transactions</legend>
+			Amount:  <input type="text" name="amount"> 
+			Transfer From: 
+			<select name="trxFr">
+				<option value="saving" selected>Saving</option>
+				<option value="checking">Checking</option>
+			</select>
+			Transfer To: 
+			<select name="trxTo">
+				<option value="saving">Saving</option>
+				<option value="checking" selected>Checking</option>
+			</select>
+		</fieldset>	
+	</form>
+</body>
+</html>
