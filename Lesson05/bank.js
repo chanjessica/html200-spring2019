@@ -26,43 +26,40 @@ const maxD = 50000;
 let amount ;
 function action(){
 	let action=prompt('Please select your choice: \nB for Balance\nD for deposit \nW for Withdraw \nQ to Quit');
-	switch(action){
-		case 'b':
+	switch(action.toUpperCase()){
 		case 'B':
 			//console.log('Your balance is $' + total);
 			//alert('Your balance is $' + total);
 			balance();
 			break;
-		case 'd':
 		case 'D':
 			amount=prompt('Enter the amount you want to deposit');
 			if (Number(amount) > maxD){
 				maxCap();
+			} else {
+				add(amount);
 			}
-			add(amount);
 			break;
-			
-		case 'w':
 		case 'W':
 			amount=prompt('Enter the amount you want to withdraw');
 			if (Number(amount) > total){
 				negativeB();
-			}else if ( total - Number(amount) < minB){
+			} else if ( total - Number(amount) < minB){
 				minBalance(amount)
+			} else {
+				minus(amount) ;
 			}
-			minus(amount) ;
 			break;
-		case 'q':
 		case 'Q':
 			alert('Good Bye');
 			break;
+		default:
+			alert('I do not know that command');
+			tryAgain();
 	}
 }
-
-function reset(){
-	total = 0;
-	count = 0;
-	console.log('total is $' + total);
+function tryAgain(){
+	action();
 }
 function negativeB(){
 	alert('You cannot withdraw more than your balcne $' + total + '\n Transaction is canceled');
@@ -74,31 +71,47 @@ function maxCap(){
 }
 function minBalance(n){
 	console.log('Your balance is $' + total);
-	let goHead=prompt('Your balance will be below $' + minB + '\nDo you want to Continue? Y/N' );
-	if (goHead){
-		minus(n);
-	} else {
-		alert('Transaction canceled');
+	let m = total - Number(n) ;
+	let goHead=prompt('Your balance will be ($' + m + ') below $' + minB + '\nDo you want to Continue? Y/N' );
+	switch (goHead){
+			case 'y':
+			case 'Y':
+				minus(n);
+				break;
+			case 'n':
+			case 'N':
+				cancel();
+				break;
 	}
 }
 function balance(){
 	console.log('Your balance is $' + total);
 	alert('Your balance is $' + total);
+	checkOut()
 	action();
 }
 function add(n){
 	total += Number(n);
 	console.log('Your balance is $' + total);
 	alert('Your balance is $' + total);
+	checkOut()
 	action();
 }
 function minus(n){
 	total -= Number(n);
 	console.log('Your balance is $' + total);
 	alert('Your balance is $' + total);
+	checkOut()
 	action();
 }
-function quit(){
-	console.log('Good Bye');
-	alert('Good Bye!');
+function cancel(){
+	alert('Your transaction is cancelled!');
+	checkOut()
+	action();
+}
+function checkOut(){
+	var balance = document.getElementById('balance');
+	balance.textContent = '$' + total.toFixed(2);
+	balance.style.color = "magenta";
+	balance.style.fontSize = "xx-large"; 
 }
