@@ -33,8 +33,7 @@ function dot(){
    document.Calculator.display.style.textAlign="right";
 }
 function clear(){
-   document.Calculator.display.value ="";
-   document.Calculator.display.style.textAlign="right";
+   document.Calculator.display.value =" ";
 }
 </script>
 
@@ -64,7 +63,7 @@ function clear(){
 <br>
 <input type="button" value="=" onclick="document.Calculator.display.value = eval(document.Calculator.display.value)"
 style="width: 60px; height: 60px; font-size:30; border-radius: 8px; margin:3px;"/>
-<input type="button" value="C" onclick="clear()" style="width: 60px; height: 60px; font-size:30; border-radius: 8px;"/>
+<input type="button" value="C" onclick="document.Calculator.display.value = ' '" style="width: 60px; height: 60px; font-size:30; border-radius: 8px;"/>
 </form>
 </body>
 </html>
