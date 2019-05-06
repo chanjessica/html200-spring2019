@@ -13,9 +13,9 @@ function action(){
 		} else if (action == 'B'){
 			balance();
 		} else if (action == 'D'){
-			add(amount);
+			add();
 		} else if (action == 'W'){
-			minus(amount);
+			minus();
 		}
 	}
 	checkOut();
